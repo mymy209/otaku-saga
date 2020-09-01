@@ -13,11 +13,10 @@
     </nav>
     <h1>My Watch List</h1>
    <ul>
-        <% user.watchList.forEach(function(watch, idx) { %>
+        <% user.watchlist.forEach(function(watch, idx) { %>
             <li>
               <% if (user._id.equals(user && user._id)) { %>
                   <form action="/watchlist/<%= idx %>?_method=DELETE" method="POST">
-                    <input type="text" name="title">
                     <button type="submit">X</button>
                   </form>
               <% } %>

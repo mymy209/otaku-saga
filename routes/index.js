@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
-const userCtrl = require('../controllers/users');
+const userCtrl = require('../controllers/watchlist');
 
 //home page
 router.get('/', function(req, res) {

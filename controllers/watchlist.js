@@ -10,27 +10,25 @@ module.exports = {
 }
 
 function addWatch(req, res, next) {
-    // This is very important to remember
-    // req.user IS the Mongoose doc for the logged in user/student
-    req.user.facts.push(req.body);
+    req.user.watchlist.push(req.body);
     req.user.save(function(err) {
-      res.redirect('/users/show');
+      res.redirect('/watchlist');
     });
   }
   
   function delWatch(req, res, next) {
-    req.user.facts.splice(req.params.id, 1);
+    req.user.watchlist.splice(req.params.id, 1);
     req.user.save(function(err) {
-      res.redirect('/users/show');
+      res.redirect('/watchlist');
     });
   }
 
 function watchList(req, res) {
-    res.render('users/watchList');
+    res.render('watchlist/index');
 }
 
 function show(req, res) {
-    res.render('users/show');
+    res.render('watchlist/show');
 };
 
 function index(req, res) {

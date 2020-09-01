@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     name: String,
     email: String,
     avatar: String,
-    watchList: [watchSchema],
+    watchlist: [watchSchema],
     googleId: String
   }, {
     timestamps: true
