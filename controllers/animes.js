@@ -4,6 +4,7 @@ const Anime = require('../models/anime');
 module.exports = {
     index, 
     edit, 
+    update,
     show,
     search,
     new: newAnime, 
@@ -11,9 +12,30 @@ module.exports = {
     delete: delAnime
 }
 
+
+
+function update(req, res) {
+    console.log(req.body);
+    //const anime = Anime.findOne({_id: req.params.id});
+    //console.log(anime);
+    /*
+    const anime = Anime.findById(req.params.id, function (err) {
+        Object.keys(req.body).forEach(function(k){
+            anime.k = req.body.k;
+        });
+    })
+    console.log(anime);
+    */
+    
+    Anime.findByIdAndUpdate(req.params.id, {altTitle: req.body.altTitle, genre: req.body.genre, seasons: req.body.seasons}, function(err) {
+        res.redirect(`/animes/${req.params.id}`);
+    });
+}
+
 function edit(req, res) {
     Anime.findById(req.params.id, function(err, anime){
-        res.render('animes/edit');
+        res.render('animes/edit', {anime});
+        console.log(anime);
     });
 }
 
@@ -22,20 +44,23 @@ function newAnime(req, res) {
 }
 
 function show(req, res) {
-    console.log(req.params.id);
     Anime.findById(req.params.id, function(err, anime) {
-        console.log(anime);
         res.render('animes/show', {anime});
     });
 };
 
 function search(req, res, next) {
-    console.log(req.query.anime);
-    Anime.find({ title: req.body.anime}).sort().exec(function(err, animes) {
-        if (err) return next(err);
-        console.log(animes);
-        res.render('animes/index', { animes, title: req.query.name});
-    });
+    if (req.query.anime) {
+        Anime.find({ "title": { "$regex": req.query.anime, "$options": "i" }}).sort().exec(function(err, animes) {
+            if (err) return next(err);
+            console.log(animes);
+            res.render('animes/index', { animes});
+        });
+    } else {
+        Anime.find({genre: req.query.genre}).exec(function(err, animes) {
+            res.render('animes/index', {animes});
+        });
+    }
 }
 
 function index(req, res) {

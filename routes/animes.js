@@ -10,6 +10,7 @@ router.get('/new', animesCtrl.new);
 router.post('/', animesCtrl.create);
 
 router.get('/:id/edit', animesCtrl.edit);
+router.put('/:id', animesCtrl.update);
 
 router.get('/:id', animesCtrl.show);
 

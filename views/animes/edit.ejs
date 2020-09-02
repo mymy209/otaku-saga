@@ -3,9 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../stylesheets/style.css" />
     <title>Edit Anime</title>
 </head>
 <body>
+    <nav>
+        <div>
+            <a href="/index">Main Page</a>
+            <% if (user) { %>
+                <a href="/profile/show">My Profile</a>
+                <% } else { %>
+                  <a href="/auth/google">Login with Google</a>
+            <% } %>
+        </div>
+        <a href="/animes/index">Anime</a>
+    </nav>
+    <h1><%= anime.title %></h1>
+    <%= anime.genre %>
+    <form action="/animes/<%= anime.id %>?_method=PUT" method="POST">
+        <h3>Alternate English Title</h3>
+        <input type="text" name="altTitle" value="<%= anime.altTitle %>">
+
+        <h3>Genre</h3>
+        <input type="checkbox" id="action" name="genre" value="Action" <%= anime.genre.includes('Action') ? 'checked' : '' %>>
+        <label for="action"> Action</label><br>
+        <input type="checkbox" id="adventure" name="genre" value="Adventure" <%= anime.genre.includes('Adventure') ? 'checked' : '' %>>
+        <label for="adventure"> Adventure</label><br>
+        <input type="checkbox" id="comedy" name="genre" value="Comedy" <%= anime.genre.includes('Comedy') ? 'checked' : '' %>>
+        <label for="comedy"> Comedy</label><br>
+        <input type="checkbox" id="drama" name="genre" value="Drama" <%= anime.genre.includes('Drama') ? 'checked' : '' %>>
+        <label for="drama"> Drama</label><br>
+        <input type="checkbox" id="sliceOfLife" name="genre" value="Slice of Life" <%= anime.genre.includes('Slice of Life') ? 'checked' : '' %>>
+        <label for="sliceOfLife"> Slice of Life</label><br>
+        <input type="checkbox" id="fantasy" name="genre" value="Fantasy" <%= anime.genre.includes('Fantasy') ? 'checked' : '' %>>
+        <label for="fantasy"> Fantasy</label><br>
+        <input type="checkbox" id="magic" name="genre" value="Magic" <%= anime.genre.includes('Magic') ? 'checked' : '' %>>
+        <label for="magic"> Magic</label><br>
+        <input type="checkbox" id="supernatural" name="genre" value="Supernatural" <%= anime.genre.includes('Supernatural') ? 'checked' : '' %>>
+        <label for="supernatural"> Supernatural</label><br>
+        <input type="checkbox" id="horror" name="genre" value="Horror" <%= anime.genre.includes('Horror') ? 'checked' : '' %>>
+        <label for="horror"> Horror</label><br>
+        <input type="checkbox" id="mystery" name="genre" value="Mystery" <%= anime.genre.includes('Mystery') ? 'checked' : '' %>>
+        <label for="mystery"> Mystery</label><br>
+        <input type="checkbox" id="psychological" name="genre" value="Psychological" <%= anime.genre.includes('Psychological') ? 'checked' : '' %>>
+        <label for="psychological"> Psychological</label><br>
+        <input type="checkbox" id="romance" name="genre" value="Romance" <%= anime.genre.includes('Romance') ? 'checked' : '' %>>
+        <label for="romance"> Romance</label><br>
+        <input type="checkbox" id="sciFi" name="genre" value="Sci-Fi" <%= anime.genre.includes('Sci-Fi') ? 'checked' : '' %>>
+        <label for="sciFi"> Sci-Fi</label><br>
+
+        <h3>Seasons</h3>
+        <input type="number" value="<%= anime.seasons %>" name="seasons">
+
+        <button type="submit">Submit</button>
+      </form>
     
 </body>
 </html>

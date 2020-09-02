@@ -21,19 +21,43 @@
     </nav>
     <h1>Add Anime</h1>
     <form action="/animes" method="POST">
-        <label>Title: 
-            <input type="text" name="title">
-        </label>
-        <label>Alternative English Title: 
-            <input type="text" name="altTitle">
-        </label>
-        <label>Genre: 
-            <input type="text" name="genre">
-        </label>
-        <label>Seasons: 
-            <input type="number" name="seasons">
-        </label>
-        <button type="submit">Submit</button>
-    </form>
+        <h3>Title</h3><p>(required)</p>
+        <input type="text" name="title">
+        <h3>Alternative English Title</h3>
+        <input type="text" name="altTitle">
+        
+        <h3>Genre</h3><p>(required)</p>
+        <input type="checkbox" id="action" name="genre" value="Action">
+        <label for="action"> Action</label><br>
+        <input type="checkbox" id="adventure" name="genre" value="Adventure">
+        <label for="adventure"> Adventure</label><br>
+        <input type="checkbox" id="comedy" name="genre" value="Comedy">
+        <label for="comedy"> Comedy</label><br>
+        <input type="checkbox" id="drama" name="genre" value="Drama">
+        <label for="drama"> Drama</label><br>
+        <input type="checkbox" id="sliceOfLife" name="genre" value="Slice of Life">
+        <label for="sliceOfLife"> Slice of Life</label><br>
+        <input type="checkbox" id="fantasy" name="genre" value="Fantasy">
+        <label for="fantasy"> Fantasy</label><br>
+        <input type="checkbox" id="magic" name="genre" value="Magic">
+        <label for="magic"> Magic</label><br>
+        <input type="checkbox" id="supernatural" name="genre" value="Supernatural">
+        <label for="supernatural"> Supernatural</label><br>
+        <input type="checkbox" id="horror" name="genre" value="Horror">
+        <label for="horror"> Horror</label><br>
+        <input type="checkbox" id="mystery" name="genre" value="Mystery">
+        <label for="mystery"> Mystery</label><br>
+        <input type="checkbox" id="psychological" name="genre" value="Psychological">
+        <label for="psychological"> Psychological</label><br>
+        <input type="checkbox" id="romance" name="genre" value="Romance">
+        <label for="romance"> Romance</label><br>
+        <input type="checkbox" id="sciFi" name="genre" value="Sci-Fi">
+        <label for="sciFi"> Sci-Fi</label><br>
+
+        <h3>Seasons</h3><p>(required)</p>
+        <input type="number" name="seasons">
+
+        <input type="submit" value="Submit">
+      </form>
 </body>
 </html>

@@ -19,7 +19,16 @@
         </div>
         <a href="/animes/index">Anime</a>
     </nav>
-    <h1><%= anime.title %></h1>
-    <button type="submit"><a href="/animes/<%= anime.id %>/edit">Edit</a></button>
+    <h1><%= anime.title %></h1><button type="submit"><a href="/animes/<%= anime.id %>/edit">Edit</a></button>
+    <h3>English Title</h3>
+    <% if (anime.altTitle.length) { %>
+        <p><%= anime.altTitle %></p>
+    <% } else { %>
+        <p>none</p>
+    <% } %>
+    <h3>Genres</h3>
+    <p><%= anime.genre.join(', '); %></p>
+    <h3>Seaons</h3>
+    <p><%= anime.seasons %></p>
 </body>
 </html>

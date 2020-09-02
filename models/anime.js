@@ -8,6 +8,7 @@ const animeSchema = new mongoose.Schema({
   altTitle: String, 
   genre: {
     type: [String], 
+    enum: ['Action', 'Adventure', 'Comedy', 'Drama', 'Slice of Life', 'Fantasy', 'Magic', 'Supernatural', 'Horror', 'Mystery', 'Psychological', 'Romance', 'Sci-Fi'],
     required: true
   },
   seasons: {
