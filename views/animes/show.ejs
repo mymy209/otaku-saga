@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <title>Details</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="/index">Main Page</a>
+            <% if (user) { %>
+                <a href="profile/show">My Profile</a>
+                <a href="/logout">Log Out</a>
+                <% } else { %>
+                  <a href="/auth/google">Login with Google</a>
+            <% } %>
+        </div>
+        <a href="/animes/index">Anime</a>
+    </nav>
+    <h1><%= anime.title %></h1>
+    <button type="submit"><a href="/animes/<%= anime.id %>/edit">Edit</a></button>
+</body>
+</html>

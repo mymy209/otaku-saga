@@ -11,28 +11,34 @@
         <div>
             <a href="/index">Main Page</a>
             <% if (user) { %>
-                <a href="profile/show">My Profile</a>
+                <a href="/profile/show">My Profile</a>
                 <% } else { %>
                   <a href="/auth/google">Login with Google</a>
             <% } %>
         </div>
-        <a href="/animes/index">Anime</a>
+        <form action="/animes" method="GET">
+            <input type="search" name="anime" placeholder="Search Anime" autocomplete="off">
+        </form>
     </nav>
     <h1>Anime</h1>
-    <% animes.forEach(function(anime, idx) { %>
-        <li>
-            <%= anime.title %>
-            <% if (user) { %>
-                <form action="/watchlist" method="POST">
-                    <button type="submit" name="id" value="<%= anime._id %>">Add to Watchlist</button>
-                </form>
-            <% } %>
-        </li>
-    <% }) %>
-    <form action="/animes" method="POST">
-            <input type="text" name="title">
-            <button type="submit">Add Anime</button>
-          </form>
-        </div>
+    <% if (animes.length) { %>
+        <% animes.forEach(function(anime, idx) { %>
+            <li>
+                <a href="/animes/<%= anime.id %>"><%= anime.title %></a>
+                <% if (user) { %>
+                    <form action="/animes/<%= anime.id %>?_method=DELETE" method="POST">
+                        <button type="submit">X</button>
+                    </form>
+                    <form action="/watchlist" method="POST">
+                        <button type="submit" name="id" value="<%= anime._id %>">Add to Watchlist</button>
+                    </form>
+                <% } %>
+            </li>
+        <% }) %>
+    <% } else { %>
+    <p>No Anime found</p>
+    <a href="/animes/new">Add Anime Here</a>
+    <a href="/animes/index">Back to All Animes</a>
+    <% } %>
 </body>
 </html>
