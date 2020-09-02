@@ -4,16 +4,16 @@ const Anime = require('../models/anime');
 
 module.exports = {
     index, 
-    watchList, 
-    addWatch, 
-    delWatch
+    create, 
+    delete: delWatch
 }
 
-function addWatch(req, res, next) {
+function create(req, res, next) {
   //console.log('HELLO', req.body.id);
     req.user.watchlist.push(req.body.id);
     req.user.save(function(err) {
       console.log("ADDED WATCHLIST", req.user.watchlist);
+      console.log("USER", req.user);
       res.redirect('/watchlist');
     });
   }
@@ -25,14 +25,12 @@ function addWatch(req, res, next) {
     });
   }
 
-function watchList(req, res) {
+function index(req, res) {
+  console.log(req.user.watchlist);
   User.findById(req.user._id).populate('watchlist').exec(function(err, user) {
     //console.log(user);
-    console.log(user.watchlist);
+    //console.log(user.watchlist);
     res.render('watchlist/index', {user});
   });
 }
 
-function index(req, res) {
-    res.render('index');
-}

@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css" />
-    <title>Watch List</title>
+    <title>Watchlist</title>
 </head>
 <body>
     <nav>
-        <a href="animes/index">Anime</a>
         <a href="/index">Main Page</a>
+        <a href="animes/index">Anime</a>
     </nav>
     <h1>My Watch List</h1>
    <ul>
-        <% user.watchlist.forEach(function(watch, idx) { %>
-            <li>
-              <form action="/watchlist/<%= idx %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-              </form>
-              <%= watch.title %>
-            </li>
-        <% }) %>
-        </ul>
-        <!-- Add Dynamic UI form below this line -->
-        <% if (user) { %>
-          <button type="submit"><a href="/animes/index">Add Anime</a></button>
-        <% } %>
+      <% user.watchlist.forEach(function(watch, idx) { %>
+        <li>
+          <form action="/watchlist/<%= idx %>?_method=DELETE" method="POST">
+            <button type="submit">X</button>
+          </form>
+        <%= watch.title %>
+        </li>
+      <% }) %>
+    </ul>
+    <!-- Add Dynamic UI form below this line -->
+    <% if (user) { %>
+      <button type="submit"><a href="/animes/index">Add Anime</a></button>
+    <% } %>
 </body>
 </html>

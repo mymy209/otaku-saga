@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css" />
-    <title>Document</title>
+    <title>Browse Anime</title>
 </head>
 <body>
+    <nav>
+        <div>
+            <a href="/index">Main Page</a>
+            <% if (user) { %>
+                <a href="profile/show">My Profile</a>
+                <% } else { %>
+                  <a href="/auth/google">Login with Google</a>
+            <% } %>
+        </div>
+        <a href="/animes/index">Anime</a>
+    </nav>
     <h1>Anime</h1>
     <% animes.forEach(function(anime, idx) { %>
         <li>
             <%= anime.title %>
             <% if (user) { %>
-                <form action="/animes/<%= anime.id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                </form>
                 <form action="/watchlist" method="POST">
                     <button type="submit" name="id" value="<%= anime._id %>">Add to Watchlist</button>
                 </form>
-              <% } %>
+            <% } %>
         </li>
     <% }) %>
     <form action="/animes" method="POST">

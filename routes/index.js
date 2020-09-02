@@ -8,7 +8,9 @@ router.get('/', function(req, res) {
   res.redirect('/index');
 });
 
-router.get('/index', userCtrl.index);
+router.get('/index', function(req, res) {
+  res.render('index');
+});
 
 //log in
 router.get('/auth/google', passport.authenticate(
