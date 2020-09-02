@@ -1,17 +1,19 @@
 const mongoose = require('mongoose');
 const User = require('../models/user');
+const Anime = require('../models/anime');
 
 module.exports = {
     index, 
-    show,
     watchList, 
     addWatch, 
     delWatch
 }
 
 function addWatch(req, res, next) {
-    req.user.watchlist.push(req.body);
+  //console.log('HELLO', req.body.id);
+    req.user.watchlist.push(req.body.id);
     req.user.save(function(err) {
+      console.log("ADDED WATCHLIST", req.user.watchlist);
       res.redirect('/watchlist');
     });
   }
@@ -24,12 +26,12 @@ function addWatch(req, res, next) {
   }
 
 function watchList(req, res) {
-    res.render('watchlist/index');
+  User.findById(req.user._id).populate('watchlist').exec(function(err, user) {
+    //console.log(user);
+    console.log(user.watchlist);
+    res.render('watchlist/index', {user});
+  });
 }
-
-function show(req, res) {
-    res.render('watchlist/show');
-};
 
 function index(req, res) {
     res.render('index');
