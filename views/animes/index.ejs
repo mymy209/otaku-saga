@@ -41,13 +41,11 @@
         </ul>
     </nav>
     <h1>Anime</h1>
-    <div class="center">
-        
-    </div>
+    <div id="animeIndex">
     <% if (animes.length) { %>
         <% animes.forEach(function(anime, idx) { %>
             <% if (idx % 5 === 0) { %>
-                <div class="center">
+                <div id="animeDisplay">
                     <li id="anime">
                         <a href="/animes/<%= anime.id %>"><%= anime.title %></a>
                         <% if (user) { %>
@@ -66,7 +64,7 @@
                         <% } %>
                     </li>
             <% } %>
-            <% if ((idx % 4 === 0) && (idx !== 0)) { %>
+            <% if ((idx % 5 === 4) && (idx !== 0)) { %>
                 </div>
             <% } %>
         <% }) %>
@@ -79,5 +77,6 @@
         <a href="/animes/index">Back to All Animes</a>
     </div>
     <% } %>
+    </div>
 </body>
 </html>

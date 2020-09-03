@@ -31,7 +31,7 @@ input.nav{
 
 #anime {
   border-radius: 50%;
-  padding: 20px;
+  padding: 30px 20px;
   list-style: none;
   background-color: #f3dcfd;
   margin-bottom: 20px;
@@ -107,6 +107,15 @@ h1 {
 .center {
   display: flex; 
   justify-content: space-evenly;
+}
+
+#animeIndex {
+  padding-right: 15%;
+  padding-left: 15%;
+}
+#animeDisplay {
+  display: flex;
+  justify-content: space-between;
 }
 
 #newForm {
