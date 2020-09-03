@@ -9,7 +9,7 @@ Users can register animes into the database, and also add them to their watchlis
 
 ### Screenshots
 
-###Technologies Used
+### Technologies Used
 
 - JavaScript
 - CSS
