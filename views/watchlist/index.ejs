@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css" />
@@ -8,23 +9,26 @@
 </head>
 <body>
     <nav>
-        <a href="/index">Main Page</a>
-        <a href="animes/index">Anime</a>
+        <a href="/index" class="nav">Main Page</a>
+        <a href="animes/index" class="nav">Anime</a>
     </nav>
     <h1>My Watch List</h1>
-   <ul>
-      <% user.watchlist.forEach(function(watch, idx) { %>
-        <li>
-          <form action="/watchlist/<%= idx %>?_method=DELETE" method="POST">
-            <button type="submit">X</button>
-          </form>
-        <%= watch.title %>
-        </li>
-      <% }) %>
-    </ul>
-    <!-- Add Dynamic UI form below this line -->
-    <% if (user) { %>
-      <button type="submit"><a href="/animes/index">Add Anime</a></button>
-    <% } %>
+    <div id="watchIndex">
+      <ul>
+         <% user.watchlist.forEach(function(watch, idx) { %>
+           <li>
+             <form action="/watchlist/<%= idx %>?_method=DELETE" method="POST" id="delWatch">
+               <button type="submit" id="delBtn">X</button>
+             </form>
+           <%= watch.title %>
+           </li><br>
+         <% }) %>
+       </ul>
+    </div>
+    <div class="center">
+      <% if (user) { %>
+        <button type="submit"><a href="/animes/index" id="addWatch">Add Anime</a></button>
+      <% } %>
+    </div>
 </body>
 </html>

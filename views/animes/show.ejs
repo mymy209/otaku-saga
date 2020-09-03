@@ -23,14 +23,22 @@
     <h1><%= anime.title %></h1>
     <div class="center"><h2>English Title</h2></div>
     <div class="center"><% if (anime.altTitle.length) { %>
-        <p><%= anime.altTitle %></p>
+        <h7><%= anime.altTitle %></h7>
     <% } else { %>
-        <p>none</p>
+        <p>None</p>
     <% } %></div>
     <div class="center"><h2>Genres</h2></div>
     <div class="center"><p><%= anime.genre.join(', '); %></p></div>
     <div class="center"><h2>Seasons</h2></div> 
     <div class="center"><p><%= anime.seasons %></p></div><br>
-    <div class="center"><button type="submit" id="editBtn"><a href="/animes/<%= anime.id %>/edit">Edit</a></button></div> 
+    <div class="center">
+        <% if (user) { %>
+            <button type="submit" id="editBtn"><a href="/animes/<%= anime.id %>/edit">Edit</a></button>
+            <form action="/watchlist" method="POST">
+                <button type="submit" name="id" value="<%= anime._id %>" id="addToWatch">+ Watchlist</button>
+            </form>
+        <% } %>
+    </div> 
+    
 </body>
 </html>

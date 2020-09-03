@@ -6,6 +6,28 @@ body {
 }
 a {
   color: #62411F;
+  text-decoration: none;
+}
+
+#link {
+  text-decoration: underline;
+}
+
+li {
+  list-style: none;
+}
+
+#watchIndex {
+  padding-left: 30%;
+}
+#watchIndex > ul {
+  font-size: 20px;
+}
+#delWatch {
+  display: inline-block; 
+}
+#delWatch > button {
+  padding: 10px 15px;
 }
 
 nav {
@@ -32,7 +54,6 @@ input.nav{
 #anime {
   border-radius: 50%;
   padding: 30px 20px;
-  list-style: none;
   background-color: #f3dcfd;
   margin-bottom: 20px;
 }
@@ -62,7 +83,7 @@ li input {
 }
 #dropLi:hover{
   font-size: 130%;
-  background: #FEEBF1;
+  background: #f7e8ed;
 }
 #dropUl #dropLi #dropUl {
   background: #E9FBFF;
@@ -130,7 +151,8 @@ h1 {
   display: inline;
 }
 #newForm > input[type=submit],
-button[type=submit] {
+button[type=submit], 
+#profileBtn {
   color: white;
   background-color: #62411F;
   border-radius: 20%;
@@ -138,13 +160,24 @@ button[type=submit] {
   border: none;
 }
 #newForm > input[type=submit]:hover,
-button[type=submit]:hover,
-#editBtn {
+#editBtn:hover, #addWatch:hover, #delBtn:hover,
+#addToWatch:hover, #submitBtn:hover {
   font-size: 150%;
+}
+#delBtn{
+  background-color: #f3d0dc;
+  outline: none;
+}
+#editBtn, #addToWatch, #submitBtn{
+  outline: none;
+}
+#editBtn>a:hover{
+  font-size: 100%;
 }
 input:focus, textarea:focus, select:focus{
   outline: none;
 }
+
 
 button > a {
   color: white;
