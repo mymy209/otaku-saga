@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet">
   <title>Otaku Saga</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
-<body id="main">
+<body class="mainview">
   <nav>
     <div class="nav">
       <% if (user) { %>
@@ -19,4 +20,8 @@
   </nav>
   <h1>Otaku Saga</h1>
 </body>
+<script type="text/javascript">
+  var images = ['https://i.imgur.com/Hin4QfP.gif', 'https://i.imgur.com/yBoMyPZ.gif', 'https://i.imgur.com/e10XLXJ.gif', 'https://i.imgur.com/l0voq58.gif', 'https://i.imgur.com/mF315wI.gif', 'https://i.imgur.com/U9ayEE9.gif', 'https://i.imgur.com/ExXBNR0.gif', 'https://i.imgur.com/jXs6iP7.gif', 'https://i.imgur.com/5AxtgN2.gif','https://i.imgur.com/wSaWI5O.gif'];
+  document.getElementsByClassName('mainview')[0].style.backgroundImage = 'url(' + images[Math.floor(Math.random() * images.length)] + ')';
+</script>
 </html>

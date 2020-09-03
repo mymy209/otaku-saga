@@ -3,11 +3,10 @@ body, html {
   color: #62411F;
   margin: 0px;
   background-color: #fcf9f9;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Concert One', cursive;
 }
-#main {
-  background-image: url("https://i.imgur.com/Hin4QfP.gif");
-  height:1 00%;
+.mainview {
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -61,12 +60,16 @@ input.nav{
 }
 
 #anime {
+  text-align: center;
   border-radius: 50%;
   padding: 30px 20px;
   background-color: #f3dcfd;
   margin-bottom: 20px;
 }
 
+#browse {
+  font-family: 'Concert One', cursive;
+}
 #dropUl {
   background: #E9FBFF;
   list-style: none;
@@ -172,6 +175,9 @@ button[type=submit],
 #editBtn:hover, #addWatch:hover, #delBtn:hover,
 #addToWatch:hover, #submitBtn:hover {
   font-size: 150%;
+}
+#addWatch, #editBtn, #addToWatch{
+  font-family: 'Concert One', cursive;
 }
 #delBtn{
   background-color: #f3d0dc;
