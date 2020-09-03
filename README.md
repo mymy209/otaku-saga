@@ -23,6 +23,7 @@ Users can register animes into the database, and also add them to their watchlis
 
 ### Getting Started
 Click on [HERE](https://trello.com/b/Ji4o344H/project-2) to see my Trello Board!
+
 Click on [HERE](https://otaku-saga.herokuapp.com/) to use Otaku Saga!
 
 ### Next Steps
