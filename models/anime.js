@@ -13,6 +13,7 @@ const animeSchema = new mongoose.Schema({
   },
   seasons: {
     type: Number, 
+    min: 1,
     required: true
   }
 }, {
