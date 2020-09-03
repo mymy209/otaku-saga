@@ -1,9 +1,18 @@
-body {
+body, html {
+  height: 100%;
   color: #62411F;
   margin: 0px;
   background-color: #fcf9f9;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+#main {
+  background-image: url("https://i.imgur.com/Hin4QfP.gif");
+  height:1 00%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 a {
   color: #62411F;
   text-decoration: none;
