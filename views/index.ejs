@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet">
   <title>Otaku Saga</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
   <nav>
-    <div>
+    <div class="nav">
       <% if (user) { %>
-        <a href="profile/show">My Profile</a>
-        <a href="/logout">Log Out</a>
+        <a href="profile/show" class="nav">My Profile</a>
+        <a href="/logout" class="nav">Log Out</a>
         <% } else { %>
-          <a href="/auth/google">Login with Google</a>
+          <a href="/auth/google" class="nav">Login with Google</a>
       <% } %>
     </div>
-    <a href="animes/index">Anime</a>
+    <a href="animes/index" class="nav">Anime</a>
   </nav>
   <h1>Otaku Saga</h1>
 </body>

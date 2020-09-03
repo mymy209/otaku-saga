@@ -72,15 +72,17 @@ function index(req, res) {
 
 
 function create(req, res) {
-    Anime.find({title: req.body.title}, function(err, animes){
-        if (err) {
+    Anime.count({title: req.body.title}, function (err, count){ 
+        if(count>0){
+            Anime.find({title: req.body.title}, function(err, animes) {
+                res.render(`animes/index`, {animes});
+            });
+        } else {
             const anime = new Anime(req.body);
             anime.save(function (err) {
             if (err) return res.render('animes/new');
             res.redirect('/animes/index');
             });
-        } else {
-            res.render('animes/index', {animes})
         }
     });
 }
