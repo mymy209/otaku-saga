@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css" />
@@ -8,56 +9,63 @@
 </head>
 <body>
     <nav>
-        <div>
+        <div class="nav">
             <% if (user) { %>
-                <a href="profile/show">My Profile</a>
-                <a href="/logout">Log Out</a>
+                <a href="profile/show" class="nav">My Profile</a>
+                <a href="/logout" class="nav">Log Out</a>
                 <% } else { %>
-                  <a href="/auth/google">Login with Google</a>
+                  <a href="/auth/google" class="nav">Login with Google</a>
             <% } %>
-            <a href="/index">Main Page</a>
+            <a href="/index" class="nav">Main Page</a>
         </div>
-        <a href="/animes/index">Anime</a>
+        <a href="/animes/index" class="nav">Anime</a>
     </nav>
     <h1>Add Anime</h1>
-    <form action="/animes" method="POST">
-        <h3>Title</h3><p>(required)</p>
-        <input type="text" name="title">
-        <h3>Alternative English Title</h3>
-        <input type="text" name="altTitle">
-        
-        <h3>Genre</h3><p>(required)</p>
-        <input type="checkbox" id="action" name="genre" value="Action">
-        <label for="action"> Action</label><br>
-        <input type="checkbox" id="adventure" name="genre" value="Adventure">
-        <label for="adventure"> Adventure</label><br>
-        <input type="checkbox" id="comedy" name="genre" value="Comedy">
-        <label for="comedy"> Comedy</label><br>
-        <input type="checkbox" id="drama" name="genre" value="Drama">
-        <label for="drama"> Drama</label><br>
-        <input type="checkbox" id="sliceOfLife" name="genre" value="Slice of Life">
-        <label for="sliceOfLife"> Slice of Life</label><br>
-        <input type="checkbox" id="fantasy" name="genre" value="Fantasy">
-        <label for="fantasy"> Fantasy</label><br>
-        <input type="checkbox" id="magic" name="genre" value="Magic">
-        <label for="magic"> Magic</label><br>
-        <input type="checkbox" id="supernatural" name="genre" value="Supernatural">
-        <label for="supernatural"> Supernatural</label><br>
-        <input type="checkbox" id="horror" name="genre" value="Horror">
-        <label for="horror"> Horror</label><br>
-        <input type="checkbox" id="mystery" name="genre" value="Mystery">
-        <label for="mystery"> Mystery</label><br>
-        <input type="checkbox" id="psychological" name="genre" value="Psychological">
-        <label for="psychological"> Psychological</label><br>
-        <input type="checkbox" id="romance" name="genre" value="Romance">
-        <label for="romance"> Romance</label><br>
-        <input type="checkbox" id="sciFi" name="genre" value="Sci-Fi">
-        <label for="sciFi"> Sci-Fi</label><br>
-
-        <h3>Seasons</h3><p>(required)</p>
-        <input type="number" name="seasons">
-
-        <input type="submit" value="Submit">
-      </form>
+    <div class="center">
+        <form action="/animes" autocomplete="off" method="POST">
+            <div id="newForm">
+                <div class="inputLabel"><h3>Title</h3><p> (required)</p></div>
+                <input type="text" name="title" id="input">
+            </div>
+            <div id="newForm">
+                <div class="inputLabel"><h3>Alternative English Title</h3></div>
+                <input type="text" name="altTitle" id="input">
+            </div>
+            <div id="newForm">
+                <div class="inputLabel"><h3>Seasons</h3><p> (required)</p></div>
+                <input type="number" name="seasons">
+            </div>
+            <div class="inputLabel"><h3>Genre</h3><p> (required)</p></div>
+            <div id="newForm">
+                <input type="checkbox" id="action" name="genre" value="Action">
+                <label for="action"> Action</label><br>
+                <input type="checkbox" id="adventure" name="genre" value="Adventure">
+                <label for="adventure"> Adventure</label><br>
+                <input type="checkbox" id="comedy" name="genre" value="Comedy">
+                <label for="comedy"> Comedy</label><br>
+                <input type="checkbox" id="drama" name="genre" value="Drama">
+                <label for="drama"> Drama</label><br>
+                <input type="checkbox" id="sliceOfLife" name="genre" value="Slice of Life">
+                <label for="sliceOfLife"> Slice of Life</label><br>
+                <input type="checkbox" id="fantasy" name="genre" value="Fantasy">
+                <label for="fantasy"> Fantasy</label><br>
+                <input type="checkbox" id="magic" name="genre" value="Magic">
+                <label for="magic"> Magic</label><br>
+                <input type="checkbox" id="supernatural" name="genre" value="Supernatural">
+                <label for="supernatural"> Supernatural</label><br>
+                <input type="checkbox" id="horror" name="genre" value="Horror">
+                <label for="horror"> Horror</label><br>
+                <input type="checkbox" id="mystery" name="genre" value="Mystery">
+                <label for="mystery"> Mystery</label><br>
+                <input type="checkbox" id="psychological" name="genre" value="Psychological">
+                <label for="psychological"> Psychological</label><br>
+                <input type="checkbox" id="romance" name="genre" value="Romance">
+                <label for="romance"> Romance</label><br>
+                <input type="checkbox" id="sciFi" name="genre" value="Sci-Fi">
+                <label for="sciFi"> Sci-Fi</label><br>
+            </div>
+            <div class="center"><div id="newForm"><input type="submit" value="Submit"></div></div>
+          </form>
+    </div>
 </body>
 </html>

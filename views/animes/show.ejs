@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css" />
@@ -8,27 +9,28 @@
 </head>
 <body>
     <nav>
-        <div>
-            <a href="/index">Main Page</a>
+        <div class="nav">
+            <a href="/index" class="nav">Main Page</a>
             <% if (user) { %>
-                <a href="profile/show">My Profile</a>
-                <a href="/logout">Log Out</a>
+                <a href="profile/show" class="nav">My Profile</a>
+                <a href="/logout" class="nav">Log Out</a>
                 <% } else { %>
-                  <a href="/auth/google">Login with Google</a>
+                  <a href="/auth/google" class="nav">Login with Google</a>
             <% } %>
         </div>
-        <a href="/animes/index">Anime</a>
+        <a href="/animes/index" class="nav">Anime</a>
     </nav>
-    <h1><%= anime.title %></h1><button type="submit"><a href="/animes/<%= anime.id %>/edit">Edit</a></button>
-    <h3>English Title</h3>
-    <% if (anime.altTitle.length) { %>
+    <h1><%= anime.title %></h1>
+    <div class="center"><h2>English Title</h2></div>
+    <div class="center"><% if (anime.altTitle.length) { %>
         <p><%= anime.altTitle %></p>
     <% } else { %>
         <p>none</p>
-    <% } %>
-    <h3>Genres</h3>
-    <p><%= anime.genre.join(', '); %></p>
-    <h3>Seaons</h3>
-    <p><%= anime.seasons %></p>
+    <% } %></div>
+    <div class="center"><h2>Genres</h2></div>
+    <div class="center"><p><%= anime.genre.join(', '); %></p></div>
+    <div class="center"><h2>Seasons</h2></div> 
+    <div class="center"><p><%= anime.seasons %></p></div><br>
+    <div class="center"><button type="submit" id="editBtn"><a href="/animes/<%= anime.id %>/edit">Edit</a></button></div> 
 </body>
 </html>

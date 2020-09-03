@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Edit Anime</title>
 </head>
 <body>
     <nav>
-        <div>
-            <a href="/index">Main Page</a>
+        <div class="nav">
+            <a href="/index" class="nav">Main Page</a>
             <% if (user) { %>
-                <a href="/profile/show">My Profile</a>
+                <a href="/profile/show" class="nav">My Profile</a>
                 <% } else { %>
-                  <a href="/auth/google">Login with Google</a>
+                  <a href="/auth/google" class="nav">Login with Google</a>
             <% } %>
         </div>
-        <a href="/animes/index">Anime</a>
+        <a href="/animes/index" class="nav">Anime</a>
     </nav>
     <h1><%= anime.title %></h1>
-    <%= anime.genre %>
-    <form action="/animes/<%= anime.id %>?_method=PUT" method="POST">
-        <h3>Alternate English Title</h3>
-        <input type="text" name="altTitle" value="<%= anime.altTitle %>">
-
-        <h3>Genre</h3>
-        <input type="checkbox" id="action" name="genre" value="Action" <%= anime.genre.includes('Action') ? 'checked' : '' %>>
-        <label for="action"> Action</label><br>
-        <input type="checkbox" id="adventure" name="genre" value="Adventure" <%= anime.genre.includes('Adventure') ? 'checked' : '' %>>
-        <label for="adventure"> Adventure</label><br>
-        <input type="checkbox" id="comedy" name="genre" value="Comedy" <%= anime.genre.includes('Comedy') ? 'checked' : '' %>>
-        <label for="comedy"> Comedy</label><br>
-        <input type="checkbox" id="drama" name="genre" value="Drama" <%= anime.genre.includes('Drama') ? 'checked' : '' %>>
-        <label for="drama"> Drama</label><br>
-        <input type="checkbox" id="sliceOfLife" name="genre" value="Slice of Life" <%= anime.genre.includes('Slice of Life') ? 'checked' : '' %>>
-        <label for="sliceOfLife"> Slice of Life</label><br>
-        <input type="checkbox" id="fantasy" name="genre" value="Fantasy" <%= anime.genre.includes('Fantasy') ? 'checked' : '' %>>
-        <label for="fantasy"> Fantasy</label><br>
-        <input type="checkbox" id="magic" name="genre" value="Magic" <%= anime.genre.includes('Magic') ? 'checked' : '' %>>
-        <label for="magic"> Magic</label><br>
-        <input type="checkbox" id="supernatural" name="genre" value="Supernatural" <%= anime.genre.includes('Supernatural') ? 'checked' : '' %>>
-        <label for="supernatural"> Supernatural</label><br>
-        <input type="checkbox" id="horror" name="genre" value="Horror" <%= anime.genre.includes('Horror') ? 'checked' : '' %>>
-        <label for="horror"> Horror</label><br>
-        <input type="checkbox" id="mystery" name="genre" value="Mystery" <%= anime.genre.includes('Mystery') ? 'checked' : '' %>>
-        <label for="mystery"> Mystery</label><br>
-        <input type="checkbox" id="psychological" name="genre" value="Psychological" <%= anime.genre.includes('Psychological') ? 'checked' : '' %>>
-        <label for="psychological"> Psychological</label><br>
-        <input type="checkbox" id="romance" name="genre" value="Romance" <%= anime.genre.includes('Romance') ? 'checked' : '' %>>
-        <label for="romance"> Romance</label><br>
-        <input type="checkbox" id="sciFi" name="genre" value="Sci-Fi" <%= anime.genre.includes('Sci-Fi') ? 'checked' : '' %>>
-        <label for="sciFi"> Sci-Fi</label><br>
-
-        <h3>Seasons</h3>
-        <input type="number" value="<%= anime.seasons %>" name="seasons">
-
-        <button type="submit">Submit</button>
-      </form>
-    
+    <div class="center">
+        <form action="/animes/<%= anime.id %>?_method=PUT" method="POST">
+            <div id="newForm">
+                <div class="inputLabel"><h3>Alternative English Title</h3></div>
+                <input type="text" name="altTitle" value="<%= anime.altTitle %>">
+            </div>
+            <div id="newForm">
+                <div class="inputLabel"><h3>Genre</h3><p> (required)</p></div>
+                <input type="checkbox" id="action" name="genre" value="Action" <%= anime.genre.includes('Action') ? 'checked' : '' %>>
+                <label for="action"> Action</label><br>
+                <input type="checkbox" id="adventure" name="genre" value="Adventure" <%= anime.genre.includes('Adventure') ? 'checked' : '' %>>
+                <label for="adventure"> Adventure</label><br>
+                <input type="checkbox" id="comedy" name="genre" value="Comedy" <%= anime.genre.includes('Comedy') ? 'checked' : '' %>>
+                <label for="comedy"> Comedy</label><br>
+                <input type="checkbox" id="drama" name="genre" value="Drama" <%= anime.genre.includes('Drama') ? 'checked' : '' %>>
+                <label for="drama"> Drama</label><br>
+                <input type="checkbox" id="sliceOfLife" name="genre" value="Slice of Life" <%= anime.genre.includes('Slice of Life') ? 'checked' : '' %>>
+                <label for="sliceOfLife"> Slice of Life</label><br>
+                <input type="checkbox" id="fantasy" name="genre" value="Fantasy" <%= anime.genre.includes('Fantasy') ? 'checked' : '' %>>
+                <label for="fantasy"> Fantasy</label><br>
+                <input type="checkbox" id="magic" name="genre" value="Magic" <%= anime.genre.includes('Magic') ? 'checked' : '' %>>
+                <label for="magic"> Magic</label><br>
+                <input type="checkbox" id="supernatural" name="genre" value="Supernatural" <%= anime.genre.includes('Supernatural') ? 'checked' : '' %>>
+                <label for="supernatural"> Supernatural</label><br>
+                <input type="checkbox" id="horror" name="genre" value="Horror" <%= anime.genre.includes('Horror') ? 'checked' : '' %>>
+                <label for="horror"> Horror</label><br>
+                <input type="checkbox" id="mystery" name="genre" value="Mystery" <%= anime.genre.includes('Mystery') ? 'checked' : '' %>>
+                <label for="mystery"> Mystery</label><br>
+                <input type="checkbox" id="psychological" name="genre" value="Psychological" <%= anime.genre.includes('Psychological') ? 'checked' : '' %>>
+                <label for="psychological"> Psychological</label><br>
+                <input type="checkbox" id="romance" name="genre" value="Romance" <%= anime.genre.includes('Romance') ? 'checked' : '' %>>
+                <label for="romance"> Romance</label><br>
+                <input type="checkbox" id="sciFi" name="genre" value="Sci-Fi" <%= anime.genre.includes('Sci-Fi') ? 'checked' : '' %>>
+                <label for="sciFi"> Sci-Fi</label><br>
+            </div>
+            <div id="newForm">
+                <div class="inputLabel"><h3>Seasons</h3></div>
+                <input type="number" value="<%= anime.seasons %>" name="seasons">
+            </div>
+            <div class="center"><button type="submit">Submit</button></div>
+          </form>
+    </div>
 </body>
 </html>

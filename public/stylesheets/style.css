@@ -1,7 +1,7 @@
 body {
   color: #62411F;
   margin: 0px;
-  background-color: #f8f8f8;
+  background-color: #fcf9f9;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 a {
@@ -34,6 +34,7 @@ input.nav{
   padding: 20px;
   list-style: none;
   background-color: #f3dcfd;
+  margin-bottom: 20px;
 }
 
 #dropUl {
@@ -54,8 +55,9 @@ input.nav{
 li input {
   color: #62411F;
   border: none;
-  background: transparent;
+  background: #E9FBFF;
   outline: none;
+  background-color: transparent;
   font-size: 15px;
 }
 #dropLi:hover{
@@ -63,7 +65,7 @@ li input {
   background: #FEEBF1;
 }
 #dropUl #dropLi #dropUl {
-  background: #CCD2E0;
+  background: #E9FBFF;
   visibility: hidden;
   opacity: 0;
   min-width: 5rem;
@@ -105,5 +107,38 @@ h1 {
 .center {
   display: flex; 
   justify-content: space-evenly;
+}
+
+#newForm {
+  padding-bottom: 20px;
+}
+#newForm > input {
+  padding: 10px;
+  font-size: 16px;
+}
+.inputLabel h3, 
+.inputLabel p {
+  display: inline;
+}
+#newForm > input[type=submit],
+button[type=submit] {
+  color: white;
+  background-color: #62411F;
+  border-radius: 20%;
+  padding: 15px 30px;
+  border: none;
+}
+#newForm > input[type=submit]:hover,
+button[type=submit]:hover,
+#editBtn {
+  font-size: 150%;
+}
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+button > a {
+  color: white;
+  text-decoration: none;
 }
 

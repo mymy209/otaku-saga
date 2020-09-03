@@ -42,21 +42,36 @@
     </nav>
     <h1>Anime</h1>
     <div class="center">
+        
+    </div>
     <% if (animes.length) { %>
         <% animes.forEach(function(anime, idx) { %>
-            <li id="anime">
-                <a href="/animes/<%= anime.id %>"><%= anime.title %></a>
-                <% if (user) { %>
-                    <form action="/animes/<%= anime.id %>?_method=DELETE" method="POST">
-                        <button type="submit">X</button>
-                    </form>
-                    <form action="/watchlist" method="POST">
-                        <button type="submit" name="id" value="<%= anime._id %>">Add to Watchlist</button>
-                    </form>
-                <% } %>
-            </li>
+            <% if (idx % 5 === 0) { %>
+                <div class="center">
+                    <li id="anime">
+                        <a href="/animes/<%= anime.id %>"><%= anime.title %></a>
+                        <% if (user) { %>
+                            <form action="/watchlist" method="POST">
+                                <button type="submit" name="id" value="<%= anime._id %>">Add to Watchlist</button>
+                            </form>
+                        <% } %>
+                    </li>
+            <% } else { %>
+                    <li id="anime">
+                        <a href="/animes/<%= anime.id %>"><%= anime.title %></a>
+                        <% if (user) { %>
+                            <form action="/watchlist" method="POST">
+                                <button type="submit" name="id" value="<%= anime._id %>">Add to Watchlist</button>
+                            </form>
+                        <% } %>
+                    </li>
+            <% } %>
+            <% if ((idx % 4 === 0) && (idx !== 0)) { %>
+                </div>
+            <% } %>
         <% }) %>
     <% } else { %>
+    <div class="center">
         <h3>No Anime found</h3>
     </div>
     <div class="center">
