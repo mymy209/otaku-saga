@@ -5,6 +5,7 @@ body, html {
   background-color: #fcf9f9;
   font-family: 'Concert One', cursive;
 }
+
 .mainview {
   height: 100%;
   background-repeat: no-repeat;
@@ -28,12 +29,15 @@ li {
 #watchIndex {
   padding-left: 30%;
 }
+
 #watchIndex > ul {
   font-size: 20px;
 }
+
 #delWatch {
   display: inline-block; 
 }
+
 #delWatch > button {
   padding: 10px 15px;
 }
@@ -45,13 +49,16 @@ nav {
   flex-direction: row-reverse;
   justify-content: space-between;
 }
+
 .nav{
   padding: 15px;
   text-decoration: none;
 }
+
 a:hover{
   font-size: 130%;
 }
+
 input.nav{
   width: 150%;
   outline: none;
@@ -70,12 +77,14 @@ input.nav{
 #browse {
   font-family: 'Concert One', cursive;
 }
+
 #dropUl {
   background: #E9FBFF;
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
+
 #dropLi {
   color: #62411F;
   background: #E9FBFF;
@@ -85,6 +94,7 @@ input.nav{
   position: relative;
   text-decoration: none;
 }
+
 li input {
   color: #62411F;
   border: none;
@@ -93,10 +103,12 @@ li input {
   background-color: transparent;
   font-size: 15px;
 }
+
 #dropLi:hover{
   font-size: 130%;
   background: #f7e8ed;
 }
+
 #dropUl #dropLi #dropUl {
   background: #E9FBFF;
   visibility: hidden;
@@ -107,12 +119,14 @@ li input {
   left: 0;
   display: none;
 }
+
 #dropUl #dropLi:hover > #dropUl,
 #dropUl #dropLi #dropUl:hover {
   visibility: visible;
   opacity: 1;
   display: block;
 }
+
 #dropUl #dropLi #dropUl #dropLi {
   clear: both;
   width: 80%;
@@ -129,9 +143,11 @@ h1 {
   display: flex; 
   justify-content: center;
 }
+
 #profile div{
   padding: 30px 0px 0px 15px;
 }
+
 #avatar {
   width: 100px;
   border-radius: 50%;
@@ -146,6 +162,7 @@ h1 {
   padding-right: 15%;
   padding-left: 15%;
 }
+
 #animeDisplay {
   display: flex;
   justify-content: space-between;
@@ -154,14 +171,17 @@ h1 {
 #newForm {
   padding-bottom: 20px;
 }
+
 #newForm > input {
   padding: 10px;
   font-size: 16px;
 }
+
 .inputLabel h3, 
 .inputLabel p {
   display: inline;
 }
+
 #newForm > input[type=submit],
 button[type=submit], 
 #profileBtn {
@@ -171,28 +191,33 @@ button[type=submit],
   padding: 15px 30px;
   border: none;
 }
+
 #newForm > input[type=submit]:hover,
 #editBtn:hover, #addWatch:hover, #delBtn:hover,
 #addToWatch:hover, #submitBtn:hover {
   font-size: 150%;
 }
+
 #addWatch, #editBtn, #addToWatch{
   font-family: 'Concert One', cursive;
 }
+
 #delBtn{
   background-color: #f3d0dc;
   outline: none;
 }
+
 #editBtn, #addToWatch, #submitBtn{
   outline: none;
 }
+
 #editBtn>a:hover{
   font-size: 100%;
 }
+
 input:focus, textarea:focus, select:focus{
   outline: none;
 }
-
 
 button > a {
   color: white;

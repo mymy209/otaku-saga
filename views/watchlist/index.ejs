@@ -9,27 +9,27 @@
     <title>Watchlist</title>
 </head>
 <body>
-    <nav>
-        <a href="/index" class="nav">Main Page</a>
-        <a href="animes/index" class="nav">Anime</a>
-    </nav>
-    <h1>My Watch List</h1>
-    <div id="watchIndex">
-      <ul>
-         <% user.watchlist.forEach(function(watch, idx) { %>
-           <li>
-             <form action="/watchlist/<%= idx %>?_method=DELETE" method="POST" id="delWatch">
-               <button type="submit" id="delBtn">X</button>
-             </form>
-           <%= watch.title %>
-           </li><br>
-         <% }) %>
-       </ul>
-    </div>
-    <div class="center">
-      <% if (user) { %>
-        <button type="submit"><a href="/animes/index" id="addWatch">Add Anime</a></button>
-      <% } %>
-    </div>
+  <nav>
+    <a href="/index" class="nav">Main Page</a>
+    <a href="animes/index" class="nav">Anime</a>
+  </nav>
+  <h1>My Watch List</h1>
+  <div id="watchIndex">
+    <ul>
+      <% user.watchlist.forEach(function(watch, idx) { %>
+        <li>
+          <form action="/watchlist/<%= idx %>?_method=DELETE" method="POST" id="delWatch">
+            <button type="submit" id="delBtn">X</button>
+          </form>
+          <%= watch.title %>
+        </li><br>
+      <% }) %>
+    </ul>
+  </div>
+  <div class="center">
+    <% if (user) { %>
+      <button type="submit"><a href="/animes/index" id="addWatch">Add Anime</a></button>
+    <% } %>
+  </div>
 </body>
 </html>
