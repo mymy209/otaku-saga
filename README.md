@@ -1,15 +1,15 @@
 # Otaku Saga
 
-## About Otaku Saga
+### About Otaku Saga
 
 Otaku Saga is an app where all anime lovers can record their journey as an otaku!
 
 Users can register animes into the database, and also add them to their watchlist.
 
 
-## Screenshots
+### Screenshots
 
-## Technologies Used
+### Technologies Used
 
 - JavaScript
 - CSS
@@ -21,9 +21,9 @@ Users can register animes into the database, and also add them to their watchlis
 - MongoDb Atlas
 - Heroku
 
-## Getting Started
+### Getting Started
 
-## Next Steps
+### Next Steps
 
 - Display spotlight anime feature at main page according to users' votes
 - Add a completed list feature
