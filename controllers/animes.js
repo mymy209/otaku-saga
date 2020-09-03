@@ -51,7 +51,7 @@ function show(req, res) {
 
 function search(req, res, next) {
     if (req.query.anime) {
-        Anime.find({ "title": { "$regex": req.query.anime, "$options": "i" }}).sort().exec(function(err, animes) {
+        Anime.find({$or:[{"title": { "$regex": req.query.anime, "$options": "i" }},{"altTitle": { "$regex": req.query.anime, "$options": "i"}}]}).sort().exec(function(err, animes) {
             if (err) return next(err);
             console.log(animes);
             res.render('animes/index', { animes});
