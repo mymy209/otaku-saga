@@ -24,3 +24,7 @@ Users can register animes into the database, and also add them to their watchlis
 ### Getting Started
 
 ### Next Steps
+
+- Display spotlight anime feature at main page according to users' votes
+- Add a completed list feature
+- Add a feature which users can follow each other and view their watchlist and completed list
