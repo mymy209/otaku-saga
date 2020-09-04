@@ -9,6 +9,12 @@ Users can register animes into the database, and also add them to their watchlis
 
 ### Screenshots
 
+<img src="https://i.imgur.com/rC6GPbG.png" width="900">
+<img src="https://i.imgur.com/am4GesG.png" width="900">
+<img src="https://i.imgur.com/t3nQYeb.png" width="900">
+
+
+
 ### Technologies Used
 
 - JavaScript
