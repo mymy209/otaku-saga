@@ -65,15 +65,15 @@ function create(req, res) {
         } else {
             const anime = new Anime(req.body);
             anime.save(function (err) {
-            if (err) return res.render('animes/new');
-            res.redirect('/animes/index');
+                if (err) return res.render('animes/new');
+                req.user.created.push(anime._id);
+                req.user.save(function(err) {
+                res.redirect('/animes/index');
+            });
             });
         }
     });
 }
-
-
-
 
 function delAnime(req, res) {
     Anime.findByIdAndDelete(req.params.id, function(err) {

@@ -8,7 +8,11 @@ const userSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId, 
       ref: 'Anime'
     }],
-    googleId: String
+    googleId: String, 
+    created: [{
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: 'Anime'
+    }]
   }, {
     timestamps: true
 });
