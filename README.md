@@ -1,6 +1,6 @@
 # Otaku Saga
 
-## About Otaku Saga
+### About Otaku Saga
 
 Otaku Saga is an app where all anime lovers can track and explore their journey as an otaku!
 
