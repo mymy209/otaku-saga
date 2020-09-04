@@ -4,7 +4,7 @@
 
 Otaku Saga is an app where all anime lovers can track and explore their journey as an otaku!
 
-Users can register animes into the database which all users can interact with.
+Users can browse animes with title search and genre look up without logging in.
 
 If users log in using a Google account, they can add animes to their watchlist and edit animes that other users have added to the database.
 
