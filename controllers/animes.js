@@ -43,7 +43,7 @@ function search(req, res, next) {
             res.render('animes/index', { animes});
         });
     } else {
-        Anime.find({genre: req.query.genre}).exec(function(err, animes) {
+        Anime.find({genre: req.query.genre}).sort().exec(function(err, animes) {
             res.render('animes/index', {animes});
         });
     }
