@@ -1,13 +1,17 @@
 # Otaku Saga
 
-### About Otaku Saga
+## About Otaku Saga
 
-Otaku Saga is an app where all anime lovers can record their journey as an otaku!
+Otaku Saga is an app where all anime lovers can track and explore their journey as an otaku!
 
-Users can register animes into the database, and also add them to their watchlist.
+Users can register animes into the database which all users can interact with.
+
+If users log in using a Google account, they can add animes to their watchlist and edit animes that other users have added to the database.
+
+Dive into your 2D adventure with Otaku Saga, your grand story as an otaku!
 
 
-### Screenshots
+## Screenshots
 <img src="https://i.imgur.com/am4GesG.png" width="900">
 <p float="left">
   <img src="https://i.imgur.com/t3nQYeb.png" width="450">
@@ -15,7 +19,7 @@ Users can register animes into the database, and also add them to their watchlis
 </p>
 
 
-### Technologies Used
+## Technologies Used
 
 - JavaScript
 - CSS
@@ -27,12 +31,12 @@ Users can register animes into the database, and also add them to their watchlis
 - MongoDb Atlas
 - Heroku
 
-### Getting Started
+## Getting Started
 Click on [HERE](https://trello.com/b/Ji4o344H/project-2) to see my Trello Board!
 
 Click on [HERE](https://otaku-saga.herokuapp.com/) to use Otaku Saga!
 
-### Next Steps
+## Next Steps
 
 - Display spotlight anime feature at main page according to users' votes
 - Add a completed list feature
