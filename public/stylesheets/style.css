@@ -198,6 +198,17 @@ button[type=submit],
   font-size: 150%;
 }
 
+#intro {
+  text-align: center;
+  margin-top: 100px;
+  margin-left: 30%;
+  display: flex; 
+  justify-content: center;
+  background-color: #fcf9f9ad;
+  width: 40%;
+  border-radius: 5%;
+}
+
 #addWatch, #editBtn, #addToWatch{
   font-family: 'Concert One', cursive;
 }
