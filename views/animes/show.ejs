@@ -39,6 +39,11 @@
             <form action="/watchlist" method="POST">
                 <button type="submit" name="id" value="<%= anime._id %>" id="addToWatch">+ Watchlist</button>
             </form>
+            <% if (user._id.equals(user && user._id)) { %>
+                <form action="/animes/<%= anime.id %>?_method=DELETE"" method="POST">
+                    <button type="submit" id="editBtn">Delete</button>
+                </form>
+            <% } %>
         <% } %>
     </div> 
     
