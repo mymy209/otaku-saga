@@ -45,7 +45,7 @@
     <div id="animeIndex">
     <% if (animes.length) { %>
         <% animes.forEach(function(anime, idx) { %>
-            <% if (idx % 3 === 0) { %>
+            <% if (idx % 4 === 0) { %>
                 <div id="animeDisplay">
                     <li id="anime">
                         <a href="/animes/<%= anime.id %>"><%= anime.title %></a>
@@ -55,7 +55,7 @@
                         <a href="/animes/<%= anime.id %>"><%= anime.title %></a>
                     </li>
             <% } %>
-            <% if ((idx % 3 === 2) && (idx !== 0)) { %>
+            <% if ((idx % 4 === 3) && (idx !== 0)) { %>
                 </div>
             <% } %>
         <% }) %>
