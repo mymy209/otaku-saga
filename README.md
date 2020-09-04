@@ -14,8 +14,8 @@ Dive into your 2D adventure with Otaku Saga, your grand story as an otaku!
 ## Screenshots
 <img src="https://i.imgur.com/am4GesG.png" width="900">
 <p float="left">
-  <img src="https://i.imgur.com/t3nQYeb.png" width="450">
-  <img src="https://i.imgur.com/rC6GPbG.png" width="450">
+  <img src="https://i.imgur.com/t3nQYeb.png" width="400">
+  <img src="https://i.imgur.com/rC6GPbG.png" width="400">
 </p>
 
 
